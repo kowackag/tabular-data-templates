@@ -1,0 +1,272 @@
+[
+    {
+        "id": 1,
+        "title": "SŁUŻBA CAŁYM ŻYCIEM... RZECZ O EUGENIUSZU WRÓBLU",
+        "genre": "film dokumentalny",
+        "performance": ["zdjęcia", "operator kamery"],
+        "year": 2020
+    },
+    {
+        "id": 2,
+        "title": "PANIE NA ZAMKU",
+        "genre": "film dokumentalny",
+        "performance": ["reżyseria", "zdjęcia", "scenariusz"],
+        "year": 2018
+    },
+    {
+        "id": 3,
+        "title": "ALFRED SCHREYER Z DROHOBYCZA",
+        "genre": "film dokumentalny",
+        "performance": ["zdjęcia"],
+        "year": 2010
+    },
+    {
+        "id": 4,
+        "title": "ŚWIAT JÓZEFA",
+        "genre": "film dokumentalny",
+        "performance": ["zdjęcia"],
+        "year": 2009
+    },
+    {
+        "id": 5,
+        "title": "SZPITAL ODZYSKANEJ NADZIEI",
+        "genre": "Telenowela dokumentalna",
+        "performance": ["zdjęcia"],
+        "year": 2008
+    },
+    {
+        "id": 6,
+        "title": "MOJE WYBORY",
+        "genre": "film dokumentalny (z cyklu SPRAWIEDLIWI)",
+        "performance": ["zdjęcia"],
+        "year": 2007
+    },
+    {
+        "id": 7,
+        "title": "MOJA WIELKA RODZINA",
+        "genre": "film dokumentalny (z cyklu SPRAWIEDLIWI)",
+        "performance": ["zdjęcia"],
+        "year": 2007
+    },
+    {
+        "id": 8,
+        "title": "DZIECI DWOJGA RODZICÓW",
+        "genre": "film dokumentalny (z cyklu SPRAWIEDLIWI)",
+        "performance": ["zdjęcia"],
+        "year": 2007
+    },
+    {
+        "id": 9,
+        "title": "MOJE WYBORY",
+        "genre": "film dokumentalny (z cyklu SPRAWIEDLIWI)",
+        "performance": ["zdjęcia"],
+        "year": 2007
+    },
+    {
+        "id": 10,
+        "title": "NIGDY NIE POZNAM ICH IMIENIA",
+        "genre": "film dokumentalny (z cyklu SPRAWIEDLIWI)",
+        "performance": ["zdjęcia"],
+        "year": 2007
+    },
+    {
+        "id": 11,
+        "title": "DOM DZIECI",
+        "genre": "film dokumentalny (z cyklu SPRAWIEDLIWI)",
+        "performance": ["zdjęcia"],
+        "year": 2007
+    },
+    {
+        "id": 12,
+        "title": "NASI SĄSIEDZI...",
+        "genre": "film dokumentalny (z cyklu SPRAWIEDLIWI)",
+        "performance": ["zdjęcia"],
+        "year": 2006
+    },
+    {
+        "id": 13,
+        "title": "MIŁOŚĆ BYŁA JEGO SIŁĄ...",
+        "genre": "film dokumentalny (z cyklu SPRAWIEDLIWI)",
+        "performance": ["zdjęcia"],
+        "year": 2006
+    },
+    {
+        "id": 14,
+        "title": "SKĄD PRZYBYWA BENEDYKT XVI?",
+        "genre": "film dokumentalny",
+        "performance": ["zdjęcia"],
+        "year": 2005
+    },
+    {
+        "id": 15,
+        "title": "PRACA DOMOWA",
+        "genre": "film dokumentalny",
+        "performance": ["zdjęcia"],
+        "year": 2004
+    },
+    {
+        "id": 16,
+        "title": "ZWYCIĘZCY NIE UMIERAJĄ",
+        "genre": "film dokumentalny",
+        "performance": ["zdjęcia"],
+        "year": 2004
+    },
+    {
+        "id": 17,
+        "title": "NIEBO NAD EUROPĄ",
+        "genre": "film dokumentalny",
+        "performance": ["zdjęcia"],
+        "year": 2003
+    },
+    {
+        "id": 18,
+        "title": "KRYPTONIM 'FRANKENSTHEIN'",
+        "genre": "film dokumentalny (z cyklu § 148. KARA ŚMIERCI)",
+        "performance": ["zdjęcia"],
+        "year": 2001
+    },
+    {
+        "id": 19,
+        "title": "PARK",
+        "genre": "film dokumentalny",
+        "performance": ["realizacja",  "scenariusz", "zdjęcia"],
+        "year": 1999
+    },
+    {
+        "id": 20,
+        "title": "INNA BAJKA",
+        "genre": "film dokumentalny",
+        "performance": ["zdjęcia"],
+        "year": 1997
+    },
+    {
+        "id": 21,
+        "title": "PANNA MADONNA LEGENDA TYCH LAT",
+        "genre": "film dokumentalny",
+        "performance": ["zdjęcia"],
+        "year": 1997
+    },
+    {
+        "id": 22,
+        "title": "HUTNICY",
+        "genre": "etiuda szkolna",
+        "performance": ["zdjęcia"],
+        "year": 1993
+    },
+    {
+        "id": 23,
+        "title": "POTRZEBA SWOBODY",
+        "genre": "etiuda szkolna",
+        "performance": ["zdjęcia"],
+        "year": 1992
+    },
+    {
+        "id": 24,
+        "title": "STORY",
+        "genre": "etiuda szkolna",
+        "performance": ["zdjęcia"],
+        "year": 1990
+    },
+    {
+        "id": 25,
+        "title": "PEWNEGO RAZU W LISTOPADZIE",
+        "genre": "film fabularny",
+        "performance": ["operator kamery (w zdjęciach dokumentalnych)"],
+        "year": 2017
+    },
+    {
+        "id": 26,
+        "title": "WKRĘCENI 2",
+        "genre": "film fabularny",
+        "performance": ["operator kamery"],
+        "year": 2015
+    },
+    {
+        "id": 27,
+        "title": "PIĄTY STADION",
+        "genre": "film fabularny",
+        "performance": ["operator kamery"],
+        "year": 2012,
+        "yearEnd":2014
+    },
+    {
+        "id": 28,
+        "title": "DWIE STRONY MEDALU",
+        "genre": "film fabularny",
+        "performance": ["operator kamery"],
+        "year": 2006,
+        "yearEnd":2007
+    },
+    {
+        "id": 29,
+        "title": "PLEBANIA",
+        "genre": "film fabularny",
+        "performance": ["operator kamery (od odcinka 159)"],
+        "year": 2000,
+        "yearEnd":2011
+    },
+    {
+        "id": 30,
+        "title": "KLAN",
+        "genre": "film fabularny",
+        "performance": ["operator kamery"],
+        "year": 1997,
+        "yearEnd":2022
+    },
+    {
+        "id": 31,
+        "title": "JASTER. TAJEMNICA HELA",
+        "genre": "film dokumentalny",
+        "performance": ["Zdjęcia dodatkowe (wywiad z K. Piechowskim z roku 2012)"],
+        "year": 2014
+    },
+    {
+        "id": 32,
+        "title": "KOCHAM. ENTER",
+        "genre": "Serial paradokumentalny",
+        "performance": ["współpraca operatorska"],
+        "year": 2013
+    },
+    {
+        "id": 33,
+        "title": "SYRENY",
+        "genre": "film dokumentalny",
+        "performance": ["współpraca operatorska"],
+        "year": 2005
+    },
+    {
+        "id": 34,
+        "title": "SKRAWEK NIEBA",
+        "genre": "film dokumentalny",
+        "performance": ["współpraca operatorska"],
+        "year": 2002
+    },
+    {
+        "id": 35,
+        "title": "TAŚMY GROZY",
+        "genre": "serial dokumentalny",
+        "performance": ["współpraca operatorska"],
+        "year": 2002
+    },
+    {
+        "id": 36,
+        "title": "PANNA Z MOKRĄ GŁOWĄ",
+        "genre": "film fabularny",
+        "performance": ["fotosy"],
+        "year": 1994
+    },
+    {
+        "id": 37,
+        "title": "PANNA Z MOKRĄ GŁOWĄ",
+        "genre": "serial fabularny",
+        "performance": ["fotosy"],
+        "year": 1994
+    },
+    {
+        "id": 38,
+        "title": "ŁOWCA. OSTATNIE STARCIE",
+        "genre": "film fabularny - telewizyjny",
+        "performance": ["fotosy"],
+        "year": 1993
+    }
+]
