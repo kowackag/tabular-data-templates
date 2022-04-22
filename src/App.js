@@ -1,12 +1,14 @@
 import React from 'react';
 
-import { ItemContext } from './context';
-import db from './db/db.json';
+import FilmSection from './components/FilmSection/FilmSection';
 
 function App() {
-
   return (
+    <article>
       <header>Wojciech Walkiewicz - Filmografia:</header>
+      <FilmSection/>
+    </article>
+
   );
 }
 
