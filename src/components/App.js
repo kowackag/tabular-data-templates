@@ -1,6 +1,6 @@
 import React from 'react';
 
-import FilmSection from './components/FilmSection/FilmSection';
+import FilmSection from './FilmSection/FilmSection';
 
 function App() {
   return (

@@ -1,7 +1,8 @@
 import React  from 'react';
 import PropTypes from 'prop-types';
 
-import TableHeader from '../TableHeader';
+import TableHeader from '../TableHeader/TableHeader';
+import TableBody from '../TableBody/TableBody';
 
 import StyledFilmsTable from './FilmsTable.styled';
 
@@ -18,6 +19,7 @@ const FilmsTable = ({films}) => {
     return (
         <StyledFilmsTable>
             <TableHeader fields={columnsNames}/>
+            <TableBody films={films} colNames={columnsNames}/>
         </StyledFilmsTable>
     )
 }

@@ -44,10 +44,12 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
+        max-width: 1000px;
         width: 100%;
+        margin: auto;
+        padding: 2rem;
         font-family: "Lato", Verdana, sans-serif;
         font-size: 1.6rem;
-        background: radial-gradient(rgb(var(--color-beta)), transparent);
         color: rgb(var(--color-font));
         line-height:1.5;
     }

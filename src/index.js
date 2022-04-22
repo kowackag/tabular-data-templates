@@ -2,7 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import {ThemeProvider} from 'styled-components';
 
-import App from './App';
+import App from './components/App';
 
 import {theme} from './styled/theme';
 import ResetStyle from './styled/Reset';
