@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import Row from '../Row/Row';
 
+import {getFilteredFilms} from '../../helpers';
+
 // import StyledTableBody from './TableBody.styled';
 
 const TableBody = ({ films, colNames }) => {
@@ -21,14 +23,14 @@ const TableBody = ({ films, colNames }) => {
         setSearchData({...searchData, [e.target.name]: e.target.value})
     }
 
-    const copyFilms = films.filter(({title, genre, year, performance}) => title.toUpperCase().includes(searchData.title.trim().toUpperCase()) && genre.toUpperCase().includes(searchData.genre.trim().toUpperCase()) && performance.join('').toUpperCase().includes(searchData.performance.trim().toUpperCase()) && year.toString().includes(searchData.year.trim()));
+    const filteredFilms = getFilteredFilms(films, searchData);
 
     return (
         <tbody>
             <Row>
                 {colNames.map(({ name }) => <td key={name}>{name && <input name={name} value={searchData[name]} onChange={changeValue}/>}</td>)}
             </Row>
-            {copyFilms.map((film, ind) => {
+            {filteredFilms.map((film, ind) => {
                 const { title, genre, performance, year } = film;
                 return (
                     <Row key={ind}>

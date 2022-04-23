@@ -8,7 +8,6 @@ function App() {
       <header>Wojciech Walkiewicz - Filmografia:</header>
       <FilmSection/>
     </article>
-
   );
 }
 
