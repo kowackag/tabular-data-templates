@@ -6,6 +6,7 @@ import {getFilteredFilms, sortFilms} from '../helpers';
 
 import Row from './Row/Row';
 import Search from './Search/Search';
+import Pagination from './Pagination';
 
 const TableBody = ({ films, colNames }) => {
     const [sortedWay] = useContext(SortContext);
@@ -38,7 +39,8 @@ const TableBody = ({ films, colNames }) => {
                 {colNames.map(({ name }) => <td key={name}>{name && <Search name={name} value={searchData[name]} changeValue={changeValue} clear={clearValue} inTable={true}/>}</td>)}
             </Row>
             {sortedFilms.length ===0 ? <Row><td colSpan={5}>Brak wyszukiwanych elementów</td></Row>
-                : sortedFilms.map((film, ind) => {
+                : <Pagination>
+                    {sortedFilms.map((film, ind) => {
                     const { title, genre, performance, year } = film;
                     return (
                         <Row key={ind}>
@@ -49,7 +51,8 @@ const TableBody = ({ films, colNames }) => {
                             <td>{year}</td>
                         </Row>
                     )
-                })
+                })}
+                </Pagination>
             }
         </tbody>
     )

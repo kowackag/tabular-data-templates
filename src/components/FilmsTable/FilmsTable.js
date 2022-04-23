@@ -1,14 +1,15 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 
-import {SortContext} from '../../context';
+import {SortContext, PaginationContext} from '../../context';
 
 import TableHeader from '../TableHeader/TableHeader';
 import TableBody from '../TableBody';
+import TableFooter from '../TableFooter';
 
 import StyledFilmsTable from './FilmsTable.styled';
 
-const FilmsTable = ({films}) => {
+const FilmsTable = ({films, limit}) => {
     const [sortedWay, setSortedWay] = useState('');
     const columnsNames = [
         {name: '', desc: ''},
@@ -18,12 +19,24 @@ const FilmsTable = ({films}) => {
         {name: 'year', desc: 'Rok'}
     ]
 
+    const [page, setPage] = useState(1);
+    const [pages, setPages] = useState(films.length);
+    
     return (
         <SortContext.Provider value={[sortedWay, setSortedWay]}>
-        <StyledFilmsTable>
-            <TableHeader fields={columnsNames}/>
-            <TableBody films={films} colNames={columnsNames}/>
-        </StyledFilmsTable>
+            <PaginationContext.Provider value={{
+                page: page,
+                setPage: setPage,
+                pages: pages,
+                setPages: setPages,
+                limit: limit
+            }}>
+                <StyledFilmsTable>
+                    <TableHeader fields={columnsNames}/>
+                    <TableBody films={films} colNames={columnsNames}/>
+                    <TableFooter/>
+                </StyledFilmsTable>
+            </PaginationContext.Provider>
         </SortContext.Provider>
     )
 }
