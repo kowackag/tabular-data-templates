@@ -6,6 +6,10 @@ const StyledRow = styled.tr`
     & > td, th {
         padding: 1rem;
     }
+
+    & td:last-child {
+        width: 12rem;
+    }
 `
 
 export default StyledRow;

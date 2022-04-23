@@ -2,10 +2,9 @@ import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 
 import Row from '../Row/Row';
+import Search from '../Search/Search';
 
 import {getFilteredFilms} from '../../helpers';
-
-// import StyledTableBody from './TableBody.styled';
 
 const TableBody = ({ films, colNames }) => {
 
@@ -28,7 +27,7 @@ const TableBody = ({ films, colNames }) => {
     return (
         <tbody>
             <Row>
-                {colNames.map(({ name }) => <td key={name}>{name && <input name={name} value={searchData[name]} onChange={changeValue}/>}</td>)}
+                {colNames.map(({ name }) => <td key={name}>{name && <Search name={name} value={searchData[name]} changeValue={changeValue} inTable={true}/>}</td>)}
             </Row>
             {filteredFilms.map((film, ind) => {
                 const { title, genre, performance, year } = film;

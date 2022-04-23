@@ -39,12 +39,12 @@ const GlobalStyle = createGlobalStyle`
         url(${latoItalicWoff}) format('woff');
     }
     html {
-        width:100vw;
+        /* width:100vw; */
         font-size: 10px;
     }
 
     body {
-        max-width: 1000px;
+        max-width: 1300px;
         width: 100%;
         margin: auto;
         padding: 2rem;

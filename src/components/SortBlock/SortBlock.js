@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { faCaretDown, faCaretUp } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import StyledSortBlock from './SortBlock.styled';
 
 const SortBlock = ({sortUp, sortDown, name}) => {

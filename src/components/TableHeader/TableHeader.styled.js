@@ -6,7 +6,6 @@ const StyledTableHeader = styled.thead`
     & th {
         & > div {
             display: flex; 
-            justify-content: center;
             align-items: center;
             & p {
                 display: inline-block;

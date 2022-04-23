@@ -2,12 +2,14 @@ import React from 'react';
 
 import FilmSection from './FilmSection/FilmSection';
 
+import StyledApp from './App.styled';
+
 function App() {
   return (
-    <article>
-      <header>Wojciech Walkiewicz - Filmografia:</header>
+    <StyledApp>
+      <header>Wojciech Walkiewicz - Filmografia</header>
       <FilmSection/>
-    </article>
+    </StyledApp>
   );
 }
 
