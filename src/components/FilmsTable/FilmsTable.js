@@ -1,13 +1,15 @@
-import React  from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 
+import {SortContext} from '../../context';
+
 import TableHeader from '../TableHeader/TableHeader';
-import TableBody from '../TableBody/TableBody';
+import TableBody from '../TableBody';
 
 import StyledFilmsTable from './FilmsTable.styled';
 
 const FilmsTable = ({films}) => {
-
+    const [sortedWay, setSortedWay] = useState('');
     const columnsNames = [
         {name: '', desc: ''},
         {name: 'title', desc: 'Tytuł'},
@@ -17,10 +19,12 @@ const FilmsTable = ({films}) => {
     ]
 
     return (
+        <SortContext.Provider value={[sortedWay, setSortedWay]}>
         <StyledFilmsTable>
             <TableHeader fields={columnsNames}/>
             <TableBody films={films} colNames={columnsNames}/>
         </StyledFilmsTable>
+        </SortContext.Provider>
     )
 }
 

@@ -1,15 +1,15 @@
 import React from 'react';
 
-import FilmSection from './FilmSection/FilmSection';
+import FilmSection from './FilmSection';
 
 import StyledApp from './App.styled';
 
-function App() {
-  return (
-    <StyledApp>
-      <header>Wojciech Walkiewicz - Filmografia</header>
-      <FilmSection/>
-    </StyledApp>
+const App = () => {
+    return (
+      <StyledApp>
+        <header>Wojciech Walkiewicz - Filmografia</header>
+        <FilmSection/>
+      </StyledApp>
   );
 }
 

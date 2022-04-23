@@ -39,7 +39,6 @@ const GlobalStyle = createGlobalStyle`
         url(${latoItalicWoff}) format('woff');
     }
     html {
-        /* width:100vw; */
         font-size: 10px;
     }
 

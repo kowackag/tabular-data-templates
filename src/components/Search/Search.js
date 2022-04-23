@@ -10,7 +10,7 @@ const Search = ({clear, changeValue, name, value, placeholder, inTable}) => {
         <StyledSearch inTable={inTable}>
             <label>{inTable||<FontAwesomeIcon icon={ faMagnifyingGlass}/>}</label>
             <input name={name} value={value} placeholder={placeholder} onChange={changeValue}/>
-            <FontAwesomeIcon icon={faX} onClick={clear}/>
+            <FontAwesomeIcon data-name={name} icon={faX} onClick={clear}/>
         </StyledSearch>
     )
 }

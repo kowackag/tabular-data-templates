@@ -1,19 +1,29 @@
-import React from 'react';
+import React, {useContext} from 'react';
+
+import {SortContext} from '../../context.js';
 
 import Row from './../Row/Row';
 import SortBlock from '../SortBlock/SortBlock';
 
 import StyledTableHeader from './TableHeader.styled';
 
-const TableHeader = ({ fields }) => {
-
+const TableHeader = ({ fields}) => {
+    const [sortedWay, setSortedWay] = useContext(SortContext);
+    
     const sortUp = (e) => {
-        console.log(e.currentTarget)
+        setSortedWay({ ...sortedWay, 
+            name: e.currentTarget.dataset.name,
+            type: "up"
+        })
     }
 
     const sortDown = (e) => {
-        console.log(e.currentTarget)
+        setSortedWay({ ...sortedWay, 
+            name: e.currentTarget.dataset.name,
+            type: "down"
+        })
     }
+
 
     return (
         <StyledTableHeader>

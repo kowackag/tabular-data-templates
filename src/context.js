@@ -1,5 +1,5 @@
 import React from 'react';
 
-const ItemContext = React.createContext();
+const SortContext = React.createContext();
 
-export {ItemContext};
+export {SortContext};
