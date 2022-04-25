@@ -8,8 +8,8 @@ import StyledSearch from './Search.styled';
 const Search = ({clear, changeValue, name, value, placeholder, inTable}) => {
     return (
         <StyledSearch inTable={inTable}>
-            <label>{inTable||<FontAwesomeIcon icon={ faMagnifyingGlass}/>}</label>
-            <input name={name} value={value} placeholder={placeholder} onChange={changeValue}/>
+            <label htmlFor={name}>{inTable||<FontAwesomeIcon icon={ faMagnifyingGlass}/>}</label>
+            <input id={name} name={name} value={value} placeholder={placeholder} onChange={changeValue}/>
             <FontAwesomeIcon data-name={name} icon={faX} onClick={clear}/>
         </StyledSearch>
     )

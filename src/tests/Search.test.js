@@ -2,8 +2,7 @@ import {render, screen, waitFor} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import Search from '../components/Search/Search';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faX} from "@fortawesome/free-solid-svg-icons";
+import FilmSection from '../components/FilmSection';
 
 describe('Search', ()=>{
     test('check if phrase field exist', () => {
@@ -24,7 +23,7 @@ describe('Search', ()=>{
         const mockFn = jest.fn();
         mockFn.mockReturnValue(false);
 
-        const {container} = render(<Search name="phrase" clear={mockFn} placeholder="Szukaj"></Search>);
+        const {container} = render(<FilmSection><Search name="phrase" clear={mockFn} placeholder="Szukaj"></Search></FilmSection>);
 
         const phraseField = screen.getByPlaceholderText(/Szukaj/i);
         userEvent.type(phraseField, 'phrase');
@@ -34,5 +33,5 @@ describe('Search', ()=>{
             userEvent.click(clearButton);
         })
         expect(phraseField.value).toBe('');
-    })  
+    })
 })
