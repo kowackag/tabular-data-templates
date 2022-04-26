@@ -35,3 +35,16 @@ export const sortItems = (arr, element) => {
         }
     }
 }
+
+export const getCopyData = (db) => {
+    const copyDb = [...db].map(({a,b,c,d,e})=>{
+        return {
+            id: a,
+            col_2: b,
+            col_3: c,
+            col_4: d.join(", "),
+            col_5: e
+        }
+    });
+    return copyDb;
+}

@@ -35,7 +35,6 @@ const FilmSection = () => {
     const filmsWithPhrase = getItemsWithPhrase(copyDb, phrase);
 
     return (
-        
             <main>  
                 <Search name="phrase" value={phrase} clear={()=>setPhrase('')} changeValue={changeValue} placeholder="Szukaj"/>
                 <Table data={filmsWithPhrase} limit="6" colNames={colNames}/>

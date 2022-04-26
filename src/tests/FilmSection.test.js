@@ -2,7 +2,7 @@ import {render, screen, waitFor} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import FilmSection from '../components/FilmSection';
-import FilmsTable from '../components/FilmsTable/FilmsTable';
+import Table from '../components/Table/Table';
 import Search from '../components/Search/Search';
 
 describe('FilmSection', ()=>{
@@ -105,7 +105,7 @@ describe('FilmSection', ()=>{
         const mockFn = jest.fn();
         mockFn.mockReturnValue(false);
 
-        const {container} = render(<FilmSection><FilmsTable/><Search clear={mockFn}/></FilmSection>);
+        const {container} = render(<FilmSection><Table/><Search clear={mockFn}/></FilmSection>);
 
         const titleField = screen.getAllByRole('textbox')[1];
         userEvent.type(titleField, 'phrase');
@@ -122,7 +122,7 @@ describe('FilmSection', ()=>{
         const mockFn = jest.fn();
         mockFn.mockReturnValue(false);
 
-        const {container} = render(<FilmSection><FilmsTable/><Search clear={mockFn}/></FilmSection>);
+        const {container} = render(<FilmSection><Table/><Search clear={mockFn}/></FilmSection>);
 
         const titleField = screen.getAllByRole('textbox')[1];
         userEvent.type(titleField, 'phrase');
