@@ -7,20 +7,13 @@ import TableHeader from '../TableHeader/TableHeader';
 import TableBody from '../TableBody';
 import TableFooter from '../TableFooter';
 
-import StyledFilmsTable from './FilmsTable.styled';
+import StyledTable from './Table.styled';
 
-const FilmsTable = ({films, limit}) => {
+const Table = ({data, limit, colNames}) => {
     const [sortedWay, setSortedWay] = useState('');
-    const columnsNames = [
-        {name: '', desc: ''},
-        {name: 'title', desc: 'Tytuł'},
-        {name: 'genre', desc: 'Gatunek'},
-        {name: 'performance', desc: 'Wykonanie'},
-        {name: 'year', desc: 'Rok'}
-    ]
-
+    
     const [page, setPage] = useState(1);
-    const [pages, setPages] = useState(films.length);
+    const [pages, setPages] = useState(data.length);
     
     return (
         <SortContext.Provider value={[sortedWay, setSortedWay]}>
@@ -31,18 +24,18 @@ const FilmsTable = ({films, limit}) => {
                 setPages: setPages,
                 limit: limit
             }}>
-                <StyledFilmsTable>
-                    <TableHeader fields={columnsNames}/>
-                    <TableBody films={films} colNames={columnsNames}/>
+                <StyledTable>
+                    <TableHeader fields={colNames}/>
+                    <TableBody data={data} colNames={colNames}/>
                     <TableFooter/>
-                </StyledFilmsTable>
+                </StyledTable>
             </PaginationContext.Provider>
         </SortContext.Provider>
     )
 }
 
-FilmsTable.propTypes = {
-    films: PropTypes.array
+Table.propTypes = {
+    data: PropTypes.array
 }
 
-export default FilmsTable;
+export default Table;

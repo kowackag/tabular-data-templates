@@ -7,9 +7,9 @@ import SortBlock from '../SortBlock/SortBlock';
 
 import StyledTableHeader from './TableHeader.styled';
 
-const TableHeader = ({ fields}) => {
+const TableHeader = ({fields}) => {
     const [sortedWay, setSortedWay] = useContext(SortContext);
-    
+
     const sortUp = (e) => {
         setSortedWay({ ...sortedWay, 
             name: e.currentTarget.dataset.name,

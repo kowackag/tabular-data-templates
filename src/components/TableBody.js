@@ -2,19 +2,19 @@ import React, {useState, useContext} from 'react';
 import PropTypes from 'prop-types';
 
 import {SortContext} from '../context.js';
-import {getFilteredFilms, sortFilms} from '../helpers';
+import {getFilteredItems, sortItems} from '../helpers';
 
 import Row from './Row/Row';
 import Search from './Search/Search';
 import Pagination from './Pagination';
 
-const TableBody = ({ films, colNames }) => {
+const TableBody = ({ data, colNames }) => {
     const [sortedWay] = useContext(SortContext);
     const init = {
-        title: '',
-        genre: '',
-        performance: '',
-        year:''
+        col_2: '',
+        col_3: '',
+        col_4: '',
+        col_5:''
     }
 
     const [searchData, setSearchData] = useState(init)
@@ -29,26 +29,26 @@ const TableBody = ({ films, colNames }) => {
         setSearchData({...searchData, [e.currentTarget.dataset.name]: ''});
     }
 
-    const filteredFilms = getFilteredFilms(films, searchData);
+    const filteredItems = getFilteredItems(data, searchData);
     
-    const sortedFilms = sortFilms(filteredFilms, sortedWay)
+    const sortedItems = sortItems(filteredItems, sortedWay)
 
     return (
         <tbody>
             <Row>
                 {colNames.map(({ name }) => <td key={name}>{name && <Search name={name} value={searchData[name]} changeValue={changeValue} clear={clearValue} inTable={true}/>}</td>)}
             </Row>
-            {sortedFilms.length ===0 ? <Row><td colSpan={5}>Brak wyszukiwanych elementów</td></Row>
+            {sortedItems.length ===0 ? <Row><td colSpan={5}>Brak wyszukiwanych elementów</td></Row>
                 : <Pagination>
-                    {sortedFilms.map((film, ind) => {
-                    const { title, genre, performance, year } = film;
+                    {sortedItems.map((item, ind) => {
+                    const { col_2, col_3, col_4, col_5 } = item;
                     return (
                         <Row key={ind}>
                             <td>{ind + 1}</td>
-                            <td>{title}</td>
-                            <td>{genre}</td>
-                            <td>{performance.join(", ")}</td>
-                            <td>{year}</td>
+                            <td>{col_2}</td>
+                            <td>{col_3}</td>
+                            <td>{col_4}</td>
+                            <td>{col_5}</td>
                         </Row>
                     )
                 })}
@@ -59,7 +59,7 @@ const TableBody = ({ films, colNames }) => {
 }
 
 TableBody.propTypes = {
-    films: PropTypes.array,
+    data: PropTypes.array,
     colNames: PropTypes.array
 }
 

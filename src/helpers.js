@@ -1,22 +1,22 @@
-export const getFilteredFilms = (arr, searchData) => {
-    const copyArr = arr.filter(({title, genre, year, performance}) => 
-        title.toUpperCase().includes(searchData.title.trim().toUpperCase()) 
-        && genre.toUpperCase().includes(searchData.genre.trim().toUpperCase()) 
-        && performance.join(',').toUpperCase().includes(searchData.performance.trim().toUpperCase()) 
-        && year.toString().includes(searchData.year.trim()));
+export const getFilteredItems = (arr, searchData) => {
+    const copyArr = arr.filter(({col_2, col_3, col_4, col_5}) => 
+        col_2.toUpperCase().includes(searchData.col_2.trim().toUpperCase()) 
+        && col_3.toUpperCase().includes(searchData.col_3.trim().toUpperCase()) 
+        && col_4.toUpperCase().includes(searchData.col_4.trim().toUpperCase()) 
+        && col_5.toString().includes(searchData.col_5.trim()));
     return copyArr;
 }
 
-export const getFilmsWithPhrase = (arr, phrase) => {
-    const copyArr = arr.filter(({title, genre, year, performance})=>
-        title.toUpperCase().includes(phrase.toUpperCase())
-        || genre.toUpperCase().includes(phrase.toUpperCase()) 
-        || performance.join(',').toUpperCase().includes(phrase.toUpperCase()) 
-        || year.toString().toUpperCase().includes(phrase.toUpperCase()));
+export const getItemsWithPhrase = (arr, phrase) => {
+    const copyArr = arr.filter(({col_2, col_3, col_4, col_5})=>
+        col_2.toUpperCase().includes(phrase.toUpperCase())
+        || col_3.toUpperCase().includes(phrase.toUpperCase()) 
+        || col_4.toUpperCase().includes(phrase.toUpperCase()) 
+        || col_5.toString().toUpperCase().includes(phrase.toUpperCase()));
     return copyArr;
 }
 
-export const sortFilms = (arr, element) => {
+export const sortItems = (arr, element) => {
     const sortUp = (property) => (a,b) => {
         return a[property].toString().localeCompare(b[property].toString());
     }
