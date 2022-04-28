@@ -9,7 +9,6 @@ on:
 
 jobs:
   deploy:
-    concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
 
     strategy:
@@ -30,7 +29,6 @@ jobs:
       - name: Install and Build
         run: |
           npm install
-          npm ci
           npm run build
           npm run test
         
@@ -41,7 +39,5 @@ jobs:
           branch: gh-pages 
           folder: build 
           clean: true
-          clean-exclude: |
-            special-file.txt
-            some/*.txt
+
          
