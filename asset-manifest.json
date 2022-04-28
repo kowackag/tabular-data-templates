@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.js": "/tabular-data-templates/static/js/main.8f206851.js",
+    "static/media/lato-bold-webfont.woff": "/tabular-data-templates/static/media/lato-bold-webfont.6f74a6070cdac2d6a3cf.woff",
+    "static/media/lato-regular-webfont.woff": "/tabular-data-templates/static/media/lato-regular-webfont.994ef840711843659f81.woff",
+    "static/media/lato-italic-webfont.woff": "/tabular-data-templates/static/media/lato-italic-webfont.b9d20b0c3b0be36b87fb.woff",
+    "static/media/lato-bold-webfont.woff2": "/tabular-data-templates/static/media/lato-bold-webfont.621dd864aefef69b8bf9.woff2",
+    "static/media/lato-regular-webfont.woff2": "/tabular-data-templates/static/media/lato-regular-webfont.57a37cef0228291b19ed.woff2",
+    "static/media/lato-italic-webfont.woff2": "/tabular-data-templates/static/media/lato-italic-webfont.53fe65c48dfe9131ba7c.woff2",
+    "index.html": "/tabular-data-templates/index.html",
+    "main.8f206851.js.map": "/tabular-data-templates/static/js/main.8f206851.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.8f206851.js"
+  ]
+}
