@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 
 const StyledNav = styled.nav`
-    display: flex;
-    justify-content: center;
-    list-style: none;
+
+    & ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+    }
 
     & li {
+        list-style: none;
         margin: 1rem;
         & button {
             border: none;
@@ -17,10 +21,12 @@ const StyledNav = styled.nav`
             :hover {
                 cursor: pointer;
             }
-            :focus{
-                font-weight: bold;
-            }
         }
     }
+
+    & li:nth-child(${props=>props.page}) button {
+        font-weight: bold;
+    }
+
 `
 export default StyledNav;

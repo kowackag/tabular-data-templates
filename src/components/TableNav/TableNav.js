@@ -5,7 +5,7 @@ import { PaginationContext } from '../../context';
 import StyledTableNav from './TableNav.styled';
 
 const TableNav = () => {
-    const {setPage, pages} = useContext(PaginationContext);
+    const {page, setPage, pages} = useContext(PaginationContext);
     
     const buttons = (new Array(pages).fill(0)).map((item, index) => 
         <li key={index}>
@@ -14,7 +14,7 @@ const TableNav = () => {
     );
 
     return(
-        <StyledTableNav>{buttons}</StyledTableNav>
+        <StyledTableNav page={page}><ul>{buttons}</ul></StyledTableNav>
     )
 } 
 

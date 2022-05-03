@@ -9,7 +9,7 @@ const StyledTableHeader = styled.thead`
             align-items: center;
             & p {
                 display: inline-block;
-                margin-right: 1rem;
+                margin-right: 0.6rem;
             }
         }
     }

@@ -1,7 +1,7 @@
 import React, {useState, useContext} from 'react';
 import PropTypes from 'prop-types';
 
-import {SortContext} from '../context.js';
+import {SortContext, PaginationContext} from '../context.js';
 import {getFilteredItems, sortItems} from '../helpers';
 
 import Row from './Row/Row';
@@ -10,6 +10,8 @@ import Pagination from './Pagination';
 
 const TableBody = ({ data, colNames }) => {
     const [sortedWay] = useContext(SortContext);
+    const {setPage} = useContext(PaginationContext);
+
     const init = {
         col_2: '',
         col_3: '',
@@ -21,7 +23,8 @@ const TableBody = ({ data, colNames }) => {
 
     const changeValue = (e) => {
         e.preventDefault();
-        setSearchData({...searchData, [e.target.name]: e.target.value})
+        setSearchData({...searchData, [e.target.name]: e.target.value});
+        setPage(1);
     }
 
     const clearValue = (e) => {
@@ -30,15 +33,14 @@ const TableBody = ({ data, colNames }) => {
     }
 
     const filteredItems = getFilteredItems(data, searchData);
-    
-    const sortedItems = sortItems(filteredItems, sortedWay)
+    const sortedItems = sortItems(filteredItems, sortedWay);
 
     return (
         <tbody>
             <Row>
                 {colNames.map(({ name }) => <td key={name}>{name && <Search name={name} value={searchData[name]} changeValue={changeValue} clear={clearValue} inTable={true}/>}</td>)}
             </Row>
-            {sortedItems.length ===0 ? <Row><td colSpan={5}>Brak wyszukiwanych elementów</td></Row>
+            {sortedItems.length === 0 ? <Row><td colSpan={5}>Brak wyszukiwanych elementów</td></Row>
                 : <Pagination>
                     {sortedItems.map((item, ind) => {
                     const { col_2, col_3, col_4, col_5 } = item;
