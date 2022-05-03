@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     @font-face {
-        font-family: "Roboto";
+        font-family: "Lato";
         font-style: regular;
         font-weight: 400;
         src:
@@ -24,14 +24,14 @@ const GlobalStyle = createGlobalStyle`
         url(${latoRegularWoff}) format('woff');
     }
     @font-face {
-        font-family: "Roboto";
+        font-family: "Lato";
         font-weight: 700;
         src:
         url(${latoBoldWoff2}) format('woff2'),
         url(${latoBoldWoff}) format('woff');
     }
     @font-face {
-        font-family: "Roboto";
+        font-family: "Lato";
         font-style: italic;
         font-weight: 400;
         src:

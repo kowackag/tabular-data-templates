@@ -1,70 +1,172 @@
-# Getting Started with Create React App
+# Tabular template
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+&nbsp;
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+[⭐ Overview](#⭐-overview)
+  - [The challenge](#the-challenge)
+  - [Instalation](#installation-💿)
+  - [Links](#links)
 
-### `npm start`
+[💡 My process](#💡-my-process)
+  - [Technologies](#technologies)
+  - [Solutions provided in the project](#solutions-provided-in-the-project)
+  - [Useful resources](#useful-resources)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[Screenshot](#screenshot)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[🙋‍♂️ Author](#🙋‍♂️-author)
 
-### `npm test`
+[👏 Special Thanks](#👏-special-thanks)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+&nbsp;
 
-### `npm run build`
+## ⭐ Overview
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+&nbsp;
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### **The challenge:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+It was my first small project using `React` and `React Testing Library`.
+The challenge was to create `the own solution of the table` in imitation of [`material-table`](https://github.com/mbrn/material-table) to be universal and re-used.
 
-### `npm run eject`
+### **Installation 💿**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The project uses [node](https://nodejs.org/en/), [npm](https://www.npmjs.com/), [CRA](https://create-react-app.dev/).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Having them installed, type into the terminal: 
+```
+npm i
+```
+Then, you may run webpack typing in the terminal:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+App is available using the following addresses:
 
-## Learn More
+http://localhost:3000
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+&nbsp;
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### **Links:**
+- [GitHub](https://github.com/kowackag/tabular-data-templates)
+- [live](https://kowackag.github.io/tabular-data-templates/)
 
-### Code Splitting
+&nbsp;
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### **Technologies:**
 
-### Analyzing the Bundle Size
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
+![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
+![Mocks](https://img.shields.io/badge/-mocks-%238D6748?style=for-the-badge&logoColor=white)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+&nbsp;
+  
+### **Solutions provided in the project:**
+- HTML:
+    - The project was built using semantic HTML5 markup.
+- CSS:
+    - The css styles are created using `styled-components`.
+    
+- JS:
+    - ES2015+ (arrow functions, destructuring, spread operator) was used.
+- React:
+    - The following hooks were used: `useState`, `useEffect`, `useRef`, `useContext`.
+    - Components are split and kept in smaller ones.
+    - `Font Awesome` ikons was used in React app thanks to `@fortawesome/react-fontawesome`.
+- Jest:
+    - The tests was prepared using `Jest` and `React testing Library`.
+    - The tests was created also using `Mock`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The universal `<Table>` component was created in imitation of `material-table` library. 
+The data are displayed in table with pagination.
+The possibility of data sorting and filtering are provided.
 
-### Advanced Configuration
+```
+const Pagination = props => {
+    const {children} = props;
+    const length = children.length;
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    const {page, limit, setPages} = useContext(PaginationContext)
+    
+    const begin = limit * (page -1);
+    const end = page * limit;
+    
+    const pages = Math.ceil(length / limit);
 
-### Deployment
+    useEffect(()=>{setPages(pages)}, [children, pages, setPages]);
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    return (
+        <> 
+            {children.slice(begin, end)}
+        </>
+    );
+}
+```
+In the `<tfoot>` the navigation `TableNav` to appropriate pages was placed:
+```
+const TableNav = () => {
+    const {page, setPage, pages} = useContext(PaginationContext);
+    
+    const buttons = (new Array(pages).fill(0)).map((item, index) => 
+        <li key={index}>
+            <button onClick={()=>setPage(index+1)}>{index +1}</button>
+        </li>
+    );
 
-### `npm run build` fails to minify
+    return(
+        <StyledTableNav page={page}><ul>{buttons}</ul></StyledTableNav>
+    )
+} 
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+I had opted to use `styled-components` as a solution for managing the CSS.
+
+To make coding with `styled-component` more comfortable, I used a special Extension in Visual Studio Code `vscode-styled-components`.
+
+I used the `createGlobalStyle` function from styled-components and added reset style and some global styles (`Reset.js` and `Global.js`)
+
+```
+import {createGlobalStyle} from 'styled-components';
+import latoRegularWoff from "./../fonts/lato-regular-webfont.woff";
+import latoRegularWoff2 from "./../fonts/lato-regular-webfont.woff2";
+ .....
+const GlobalStyle = createGlobalStyle
+    ...
+    @font-face {
+        font-family: "Lato";
+        font-style: regular;
+        font-weight: 400;
+        src:
+        url(${latoRegularWoff2}) format('woff2'),
+        url(${latoRegularWoff}) format('woff');
+    }
+```
+
+### **Useful resources:**
+
+- [React Testing libary](https://testing-library.com/docs/)
+- [Google Font](https://fonts.google.com/specimen/Lato) - `Lato`
+- [Font Avesome](https://fontawesome.com/)
+
+
+&nbsp;
+
+## 🙋‍♂️ Author
+
+The project was made by Małgorzata Kowacka.
+- kowackag@gmail.com
+- GitHub - [kowackag](https://github.com/kowackag)
+- Linked - [Małgorzata Kowacka](https://www.linkedin.com/in/malgorzata-kowacka)
+
+ **If you have any questions do not hesitate to contact me.**
+
+&nbsp;

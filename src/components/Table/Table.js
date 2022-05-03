@@ -35,7 +35,8 @@ const Table = ({data, limit, colNames}) => {
 }
 
 Table.propTypes = {
-    data: PropTypes.array
+    data: PropTypes.array,
+    colNames: PropTypes.array
 }
 
 export default Table;
