@@ -8,16 +8,16 @@ import Search from '../components/Search/Search';
 describe('FilmSection', ()=>{
     test('check if all text field exist', () => {
         render (<FilmSection/>);
-
+    
         const textFields = screen.getAllByRole('textbox');
-        expect(textFields.length).toBe(5);
+        expect(textFields.length).toBe(4);
     })  
 
     test('check how filtering films works - displaying info when title does not exist', () => {
         render (<FilmSection/>);
 
         const titleField = screen.getAllByRole('textbox')[1];
-        userEvent.type(titleField, 'phrase');
+        userEvent.type(titleField, 'dokum');
 
         const info = screen.getByText(/Brak wyszukiwanych elementów/i)
         expect(info).toBeInTheDocument();
@@ -54,7 +54,7 @@ describe('FilmSection', ()=>{
 
         const rows = screen.getAllByRole('row');
 
-        expect(rows.length).toBe(6);    // +3 thead, search, tfoot
+        expect(rows.length).toBe(4);    // +3 thead, search, tfoot
     })
 
 // ---------------- filtering and searching---------------
@@ -75,7 +75,7 @@ describe('FilmSection', ()=>{
     test('check how filtering and searching films works - displaying film title', () => {
         render (<FilmSection/>);
 
-        const performanceField = screen.getAllByRole('textbox')[3];
+        const performanceField = screen.getAllByRole('textbox')[2];
         userEvent.type(performanceField, 'fotosy');
 
         const phraseField = screen.getByPlaceholderText(/Szukaj/i);

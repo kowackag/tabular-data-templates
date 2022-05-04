@@ -16,7 +16,7 @@ const TableBody = ({ data, colNames }) => {
         col_2: '',
         col_3: '',
         col_4: '',
-        col_5:''
+        col_5: ''
     }
 
     const [searchData, setSearchData] = useState(init)
